@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
-  
-  get "users/new"
+  resources :users
+  #get "users/new"
+  root 'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
@@ -10,7 +11,7 @@ SampleApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'static_pages#home'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
